@@ -1,40 +1,106 @@
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #0f0f1f;
-    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
     margin: 0;
     padding: 0;
-    text-align: center;
+    direction: rtl;
+    text-align: right;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 header {
+    background-color: #1f2937;
+    color: white;
     padding: 20px;
-    background-color: #1a1a2e;
+    text-align: center;
+    animation: slideDown 1s ease-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+h1, h2, h3 {
+    margin: 10px 0;
 }
 
 main {
-    margin-top: 30px;
+    padding: 20px;
 }
 
-ul {
+.tools ul, .category ul {
     list-style: none;
     padding: 0;
 }
 
-ul li {
-    margin: 10px 0;
+.tools li, .category li {
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.tools li:hover, .category li:hover {
+    transform: translateX(-10px);
 }
 
 a {
-    color: #00c3ff;
     text-decoration: none;
-    font-size: 18px;
+    color: #2563eb;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 footer {
-    margin-top: 40px;
+    background-color: #1f2937;
+    color: white;
+    text-align: center;
     padding: 10px;
-    background-color: #1a1a2e;
-    font-size: 14px;
+    margin-top: 30px;
+    animation: fadeIn 1s ease-in;
+}
+
+input[type="text"], textarea, select {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    transition: box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus, textarea:focus, select:focus {
+    box-shadow: 0 0 8px #2563eb;
+    outline: none;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #1e40af;
+    transform: scale(1.05);
+}
+
+.category {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.category:hover {
+    transform: scale(1.03);
 }
